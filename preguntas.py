@@ -20,7 +20,7 @@ Utilice el archivo `data.csv` para resolver las preguntas.
 #            sequence.append((fileinput.filename(), line))    
 #                                                    
 #    return sequence
-input_file = "data.csv"
+
 #
 def creacion_matriz(input_file):
     sequence = []
@@ -32,9 +32,10 @@ def creacion_matriz(input_file):
             sequence.append(fila)
             
     return sequence
+input_file = "data.csv"
 
 
-def pregunta_01(sequence):
+def pregunta_01():
     """
     Retorne la suma de la segunda columna.
 
@@ -42,6 +43,7 @@ def pregunta_01(sequence):
     214
 
     """
+    sequence = creacion_matriz(input_file)
     suma = 0
     for i in sequence:
         suma += int(i[1])
@@ -50,7 +52,8 @@ def pregunta_01(sequence):
 
 
 
-def pregunta_02(sequence):
+
+def pregunta_02():
     """
     Retorne la cantidad de registros por cada letra de la primera columna como la lista
     de tuplas (letra, cantidad), ordendas alfabéticamente.
@@ -65,6 +68,7 @@ def pregunta_02(sequence):
     ]
 
     """
+    sequence = creacion_matriz(input_file)
     new_sequence = []
     for i in sequence:
         new_sequence.append((i[0], 1))
@@ -84,7 +88,7 @@ def pregunta_02(sequence):
       
 
 
-def pregunta_03(sequence):
+def pregunta_03():
     """
     Retorne la suma de la columna 2 por cada letra de la primera columna como una lista
     de tuplas (letra, suma) ordendas alfabeticamente.
@@ -99,6 +103,7 @@ def pregunta_03(sequence):
     ]
 
     """
+    sequence = creacion_matriz(input_file)
     new_sequence = []
     for i in sequence:
         new_sequence.append((i[0], int(i[1])))
@@ -116,10 +121,10 @@ def pregunta_03(sequence):
         new_sequence.append((key, value))
     return new_sequence
     
-#input_file = "data.csv"
 
 
-def pregunta_04(sequence):
+
+def pregunta_04():
     """
     La columna 3 contiene una fecha en formato `YYYY-MM-DD`. Retorne la cantidad de
     registros por cada mes, tal como se muestra a continuación.
@@ -141,6 +146,7 @@ def pregunta_04(sequence):
     ]
 
     """
+    sequence = creacion_matriz(input_file)
     new_sequence = []
     for i in sequence:
         i[2] = i[2].split("-")
@@ -162,7 +168,7 @@ def pregunta_04(sequence):
     
 
 
-def pregunta_05(sequence):
+def pregunta_05():
     """
     Retorne una lista de tuplas con el valor maximo y minimo de la columna 2 por cada
     letra de la columa 1.
@@ -177,6 +183,7 @@ def pregunta_05(sequence):
     ]
 
     """
+    sequence = creacion_matriz(input_file)
     new_sequence = []
     for i in sequence:
         new_sequence.append((i[0],int(i[1])))
@@ -196,7 +203,7 @@ def pregunta_05(sequence):
 
 
 
-def pregunta_06(sequence):
+def pregunta_06():
     """
     La columna 5 codifica un diccionario donde cada cadena de tres letras corresponde a
     una clave y el valor despues del caracter : corresponde al valor asociado a la
@@ -218,6 +225,7 @@ def pregunta_06(sequence):
     ]
 
     """
+    sequence = creacion_matriz(input_file)
     new_sequence = []
     for i in sequence:
         i[4] = i[4].split(",")
@@ -240,7 +248,7 @@ def pregunta_06(sequence):
     return new_sequence
 
 
-def pregunta_07(sequence):
+def pregunta_07():
     """
     Retorne una lista de tuplas que asocien las columnas 0 y 1. Cada tupla contiene un
     valor posible de la columna 2 y una lista con todas las letras asociadas (columna 1)
@@ -261,7 +269,7 @@ def pregunta_07(sequence):
     ]
 
     """
-
+    sequence = creacion_matriz(input_file)
     new_sequence = []
     for i in sequence:
         new_sequence.append((int(i[1]), (i[0])))
@@ -279,7 +287,7 @@ def pregunta_07(sequence):
         new_sequence.append((key, value))
     return new_sequence
 
-def pregunta_08(sequence):
+def pregunta_08():
     """
     Genere una lista de tuplas, donde el primer elemento de cada tupla contiene  el valor
     de la segunda columna; la segunda parte de la tupla es una lista con las letras
@@ -301,6 +309,7 @@ def pregunta_08(sequence):
     ]
 
     """
+    sequence = creacion_matriz(input_file)
     new_sequence = []
     for i in sequence:
         new_sequence.append((int(i[1]), (i[0])))
@@ -323,7 +332,7 @@ def pregunta_08(sequence):
    
 
 
-def pregunta_09(sequence):
+def pregunta_09():
     """
     Retorne un diccionario que contenga la cantidad de registros en que aparece cada
     clave de la columna 5.
@@ -343,6 +352,7 @@ def pregunta_09(sequence):
     }
 
     """
+    sequence = creacion_matriz(input_file)
     new_sequence = []
     for i in sequence:
         i[4] = i[4].split(",")
@@ -364,7 +374,7 @@ def pregunta_09(sequence):
 
 
 
-def pregunta_10(sequence):
+def pregunta_10():
     """
     Retorne una lista de tuplas contengan por cada tupla, la letra de la columna 1 y la
     cantidad de elementos de las columnas 4 y 5.
@@ -382,6 +392,7 @@ def pregunta_10(sequence):
 
 
     """
+    sequence = creacion_matriz(input_file)
     new_sequence = []
     for i in sequence:
         i[3] = i[3].split(",")
@@ -391,7 +402,7 @@ def pregunta_10(sequence):
     
     return new_sequence
 
-def pregunta_11(sequence):
+def pregunta_11():
     """
     Retorne un diccionario que contengan la suma de la columna 2 para cada letra de la
     columna 4, ordenadas alfabeticamente.
@@ -409,6 +420,7 @@ def pregunta_11(sequence):
 
 
     """
+    sequence = creacion_matriz(input_file)
     new_sequence = []
     for i in sequence:
         i[3] = i[3].split(",")
@@ -427,7 +439,7 @@ def pregunta_11(sequence):
     
     
 
-def pregunta_12(sequence):
+def pregunta_12():
     """
     Genere un diccionario que contengan como clave la columna 1 y como valor la suma de
     los valores de la columna 5 sobre todo el archivo.
@@ -442,6 +454,7 @@ def pregunta_12(sequence):
     }
 
     """
+    sequence = creacion_matriz(input_file)
     new_sequence = []
     for i in sequence:
         i[4] = i[4].split(",")
@@ -457,5 +470,5 @@ def pregunta_12(sequence):
             diccionario[key] = 0
         diccionario[key] += value
     return diccionario
-sequence = creacion_matriz(input_file)
+
 
